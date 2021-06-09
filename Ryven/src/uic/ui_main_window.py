@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.0.2
+## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -39,6 +39,8 @@ class Ui_MainWindow(object):
         self.actionSave_Pic_Viewport.setObjectName(u"actionSave_Pic_Viewport")
         self.actionSave_Pic_Whole_Scene_scaled = QAction(MainWindow)
         self.actionSave_Pic_Whole_Scene_scaled.setObjectName(u"actionSave_Pic_Whole_Scene_scaled")
+        self.actionRe_Import_Nodes = QAction(MainWindow)
+        self.actionRe_Import_Nodes.setObjectName(u"actionRe_Import_Nodes")
         self.centralWidget = QWidget(MainWindow)
         self.centralWidget.setObjectName(u"centralWidget")
         self.gridLayout = QGridLayout(self.centralWidget)
@@ -106,6 +108,7 @@ class Ui_MainWindow(object):
         self.menuBar.addAction(self.menuView.menuAction())
         self.menuBar.addAction(self.menuDebugging.menuAction())
         self.menuFile.addAction(self.actionImport_Nodes)
+        self.menuFile.addAction(self.actionRe_Import_Nodes)
         self.menuFile.addAction(self.actionSave_Project)
         self.menuView.addSeparator()
         self.menuView.addAction(self.menuFlow_Design_Style.menuAction())
@@ -143,6 +146,7 @@ class Ui_MainWindow(object):
 "The more you zoomed in, the sharper the picture.\n"
 "This will take a few seconds.", None))
 #endif // QT_CONFIG(tooltip)
+        self.actionRe_Import_Nodes.setText(QCoreApplication.translate("MainWindow", u"Re-Import Nodes", None))
         self.scripts_groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Scripts", None))
         self.scripts_tab_widget.setTabText(self.scripts_tab_widget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))

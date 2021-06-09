@@ -81,6 +81,7 @@
      <string>File</string>
     </property>
     <addaction name="actionImport_Nodes"/>
+    <addaction name="actionRe_Import_Nodes"/>
     <addaction name="actionSave_Project"/>
    </widget>
    <widget class="QMenu" name="menuView">
@@ -168,6 +169,11 @@ This will save exactly what you see in the same resolution.</string>
     <string>Saves a picture of the whole current scene. 
 The more you zoomed in, the sharper the picture.
 This will take a few seconds.</string>
+   </property>
+  </action>
+  <action name="actionRe_Import_Nodes">
+   <property name="text">
+    <string>Re-Import Nodes</string>
    </property>
   </action>
  </widget>

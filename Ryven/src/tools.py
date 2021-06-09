@@ -47,27 +47,33 @@ def import_nodes_package(package: NodesPackage) -> list:
         # because all the node package modules are named 'nodes.py' now, we need to retrieve the sources via inspect here
         # since inspect will be unable to do so once we imported another 'nodes' module.
 
-        node_cls_sources = NENV.NodesRegistry.exported_node_sources[-1]
-        node_mod_sources = [inspect.getsource(inspect.getmodule(n)) for n in nodes]
+        try:
 
-        for i in range(len(nodes)):
-            n = nodes[i]
+            node_cls_sources = NENV.NodesRegistry.exported_node_sources[-1]
+            node_mod_sources = [inspect.getsource(inspect.getmodule(n)) for n in nodes]
 
-            mw_cls_src = inspect.getsource(n.main_widget_class) if n.main_widget_class else None
-            mw_mod_src = inspect.getsource(inspect.getmodule(n.main_widget_class)) if n.main_widget_class else None
+            for i in range(len(nodes)):
+                n = nodes[i]
 
-            n.__class_codes__ = {
-                'node cls': node_cls_sources[i],
-                'node mod': node_mod_sources[i],
-                'main widget cls': mw_cls_src,
-                'main widget mod': mw_mod_src,
-                'custom input widgets': {
-                    name: {
-                        'cls': inspect.getsource(inp_cls),
-                        'mod': inspect.getsource(inspect.getmodule(inp_cls))
-                    } for name, inp_cls in n.input_widget_classes.items()
+                mw_cls_src = inspect.getsource(n.main_widget_class) if n.main_widget_class else None
+                mw_mod_src = inspect.getsource(inspect.getmodule(n.main_widget_class)) if n.main_widget_class else None
+
+                n.__class_codes__ = {
+                    'node cls': node_cls_sources[i],
+                    'node mod': node_mod_sources[i],
+                    'main widget cls': mw_cls_src,
+                    'main widget mod': mw_mod_src,
+                    'custom input widgets': {
+                        name: {
+                            'cls': inspect.getsource(inp_cls),
+                            'mod': inspect.getsource(inspect.getmodule(inp_cls))
+                        } for name, inp_cls in n.input_widget_classes.items()
+                    }
                 }
-            }
+
+        except OSError:  # getsource failed due to wrong getmodule result
+            # inspect looks for wrong modules for widget files when re-importing
+            pass
 
     # -----------
 

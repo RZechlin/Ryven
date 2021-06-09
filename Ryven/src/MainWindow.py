@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
 
         self.session = None
         self.theme = window_theme
-        self.node_packages = {}  # {Node: str}
+        self.node_packages = {}  # {Node: NodePackage}
         self.script_UIs = []
 
         # SESSION
@@ -147,6 +147,7 @@ import: ctrl+i
         self.ui.menuFlow_Design_Style.addMenu(light_themes_menu)
 
         self.ui.actionImport_Nodes.triggered.connect(self.on_import_nodes_triggered)
+        self.ui.actionRe_Import_Nodes.triggered.connect(self.on_reimport_nodes_triggered)
         self.ui.actionSave_Project.triggered.connect(self.on_save_project_triggered)
         self.ui.actionEnableInfoMessages.triggered.connect(self.on_enable_info_msgs_triggered)
         self.ui.actionDisableInfoMessages.triggered.connect(self.on_disable_info_msgs_triggered)
@@ -213,6 +214,29 @@ import: ctrl+i
         file_path = QFileDialog.getOpenFileName(self, 'select nodes file', '../packages', '(*.py)',)[0]
         if file_path != '':
             self.import_nodes(path=dirname(file_path))
+
+    def on_reimport_nodes_triggered(self):
+
+        # switch packages data structure to {NodesPackage: [Node]}
+        packages: [NodesPackage] = list(set(self.node_packages.values()))
+        package_nodes = {
+            p: [n for n, n_p in self.node_packages.items() if n_p == p]
+            for p in packages if p.name != 'built_in'
+        }
+
+        for p, nodes in package_nodes.items():
+
+            # unregister nodes
+            for n in nodes:
+                del self.node_packages[n]
+                self.session.unregister_node(n)
+
+                while p.directory in sys.path:
+                    sys.path.remove(p.directory)
+                while p.directory.replace('/', '\\') in sys.path:  # windows
+                    sys.path.remove(p.directory.replace('/', '\\'))
+
+            self.import_nodes(p)
 
     def on_performance_mode_changed(self, action):
         if action == self.ac_perf_mode_fast:
@@ -308,6 +332,10 @@ import: ctrl+i
             p = package
         else:
             p = NodesPackage(path)
+
+        for p_ in self.node_packages.values():
+            if p_.name == p.name:
+                return  # don't import package twice
 
         try:
             nodes = import_nodes_package(p)
