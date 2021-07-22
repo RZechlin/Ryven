@@ -1,0 +1,1045 @@
+{
+    "general info": {
+        "type": "Ryven project file"
+    },
+    "required packages": [
+        {
+            "name": "std",
+            "dir": "E:/Code/SiLA/Ryven/Ryven/packages/std"
+        },
+        {
+            "name": "prototype",
+            "dir": "E:/Code/SiLA/Ryven/Ryven/packages/prototype"
+        }
+    ],
+    "macro scripts": [
+        {
+            "name": "Calc_New_Velocity",
+            "variables": {
+                "old_velocity": {
+                    "serialized": "gAROLg=="
+                },
+                "delta_weight": {
+                    "serialized": "gAROLg=="
+                },
+                "new_velocity": {
+                    "serialized": "gAROLg=="
+                }
+            },
+            "flow": {
+                "algorithm mode": "data",
+                "nodes": [
+                    {
+                        "identifier": "BUILTIN_MacroInputNode",
+                        "state data": "gAR9lC4=",
+                        "special actions": {
+                            "add parameter": {
+                                "data": {
+                                    "method": "add_macro_param",
+                                    "data": "data"
+                                },
+                                "exec": {
+                                    "method": "add_macro_param",
+                                    "data": "exec"
+                                }
+                            },
+                            "remove parameter": {
+                                "1": {
+                                    "method": "remove_macro_param",
+                                    "data": 1
+                                },
+                                "2": {
+                                    "method": "remove_macro_param",
+                                    "data": 2
+                                }
+                            }
+                        },
+                        "display title": "input",
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            },
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 356.0,
+                        "pos y": 471.0,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "BUILTIN_MacroOutputNode",
+                        "state data": "gAR9lC4=",
+                        "special actions": {
+                            "add return": {
+                                "data": {
+                                    "method": "add_macro_return",
+                                    "data": "data"
+                                },
+                                "exec": {
+                                    "method": "add_macro_return",
+                                    "data": "exec"
+                                }
+                            },
+                            "remove return": {
+                                "0": {
+                                    "method": "remove_macro_return",
+                                    "data": 0
+                                }
+                            }
+                        },
+                        "display title": "output",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [],
+                        "pos x": 1083.0,
+                        "pos y": 447.0,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "built_in.SetVar_Node",
+                        "state data": "gASVDgAAAAAAAAB9lIwGYWN0aXZllIhzLg==",
+                        "special actions": {
+                            "make passive": {
+                                "method": "action_make_passive"
+                            }
+                        },
+                        "display title": "set var",
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": "",
+                                "val": "gAROLg=="
+                            },
+                            {
+                                "type": "data",
+                                "label": "var",
+                                "val": "gASVEAAAAAAAAACMDG5ld192ZWxvY2l0eZQu",
+                                "dtype": "DType.String",
+                                "dtype state": "gASVLwAAAAAAAAB9lCiMB2RlZmF1bHSUjACUjANkb2OUaAKMBmJvdW5kc5ROjARzaXpllIwBbZR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVGgAAAAAAAAB9lIwEdGV4dJSMDG5ld192ZWxvY2l0eZRzLg=="
+                            },
+                            {
+                                "type": "data",
+                                "label": "val",
+                                "val": "gASVBAAAAAAAAABN9AEu",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVEQAAAAAAAAB9lIwEdGV4dJSMAzUwMJRzLg=="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": "val"
+                            }
+                        ],
+                        "pos x": 749.0,
+                        "pos y": 455.0,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    }
+                ],
+                "connections": [
+                    {
+                        "parent node index": 2,
+                        "output port index": 1,
+                        "connected node": 1,
+                        "connected input port index": 0
+                    }
+                ]
+            },
+            "parameters": [
+                {
+                    "type": "data",
+                    "label": ""
+                },
+                {
+                    "type": "exec",
+                    "label": ""
+                },
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ],
+            "returns": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ],
+            "ID": 0,
+            "flow view": {
+                "drawings": [],
+                "view size": [
+                    6400.0,
+                    4800.0
+                ]
+            }
+        }
+    ],
+    "scripts": [
+        {
+            "name": "hello world",
+            "variables": {
+                "time_since_last_calibration": {
+                    "serialized": "gASVBAAAAAAAAABNQAYu"
+                },
+                "CALIBRATION_INTERVAL": {
+                    "serialized": "gASVBAAAAAAAAABNEA4u"
+                },
+                "Time": {
+                    "serialized": "gASVBAAAAAAAAABNsAQu"
+                },
+                "NEXT_STAGE": {
+                    "serialized": "gASVBAAAAAAAAABN4C4u"
+                },
+                "old_weight": {
+                    "serialized": "gAROLg=="
+                },
+                "velocity": {
+                    "serialized": "gAROLg=="
+                }
+            },
+            "flow": {
+                "algorithm mode": "data",
+                "nodes": [
+                    {
+                        "identifier": "built_in.GetVar_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "get Time",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gASVCAAAAAAAAACMBFRpbWWULg==",
+                                "dtype": "DType.String",
+                                "dtype state": "gASVLwAAAAAAAAB9lCiMB2RlZmF1bHSUjACUjANkb2OUaAKMBmJvdW5kc5ROjARzaXpllIwBbZR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBFRpbWWUcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "val"
+                            }
+                        ],
+                        "pos x": 239.08826568946438,
+                        "pos y": 284.6876034715492,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.Minus_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {
+                            "add input": {
+                                "method": "add_operand_input"
+                            },
+                            "remove input 0": {
+                                "method": "remove_operand_input",
+                                "data": 0
+                            },
+                            "remove input 1": {
+                                "method": "remove_operand_input",
+                                "data": 1
+                            }
+                        },
+                        "display title": "-",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBE5vbmWUcy4="
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBE5vbmWUcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 508.0003110514997,
+                        "pos y": 363.1037876955542,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "built_in.GetVar_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "get var",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gASVFgAAAAAAAACMEnRfbGFzdF9jYWxpYnJhdGlvbpQu",
+                                "dtype": "DType.String",
+                                "dtype state": "gASVLwAAAAAAAAB9lCiMB2RlZmF1bHSUjACUjANkb2OUaAKMBmJvdW5kc5ROjARzaXpllIwBbZR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVIAAAAAAAAAB9lIwEdGV4dJSMEnRfbGFzdF9jYWxpYnJhdGlvbpRzLg=="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "val"
+                            }
+                        ],
+                        "pos x": 205.27007475425629,
+                        "pos y": 459.70146993285124,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.Less_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {
+                            "add input": {
+                                "method": "add_operand_input"
+                            },
+                            "remove input 0": {
+                                "method": "remove_operand_input",
+                                "data": 0
+                            },
+                            "remove input 1": {
+                                "method": "remove_operand_input",
+                                "data": 1
+                            }
+                        },
+                        "display title": "<",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVEwAAAAAAAAB9lIwEdGV4dJSMBS0yNDAwlHMu"
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBDM2MDCUcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 816.7679024885742,
+                        "pos y": 363.9662670012443,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "built_in.GetVar_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "get var",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gASVGAAAAAAAAACMFENBTElCUkFUSU9OX0lOVEVSVkFMlC4=",
+                                "dtype": "DType.String",
+                                "dtype state": "gASVLwAAAAAAAAB9lCiMB2RlZmF1bHSUjACUjANkb2OUaAKMBmJvdW5kc5ROjARzaXpllIwBbZR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVIgAAAAAAAAB9lIwEdGV4dJSMFENBTElCUkFUSU9OX0lOVEVSVkFMlHMu"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "val"
+                            }
+                        ],
+                        "pos x": 364.82874630693436,
+                        "pos y": 587.3484071749938,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.If_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "branch",
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": "",
+                                "val": "gAROLg=="
+                            },
+                            {
+                                "type": "data",
+                                "label": "cond",
+                                "dtype": "DType.Boolean",
+                                "dtype state": "gASVIwAAAAAAAAB9lCiMB2RlZmF1bHSUiYwDZG9jlIwAlIwGYm91bmRzlE51Lg==",
+                                "has widget": true,
+                                "widget data": "gASVDwAAAAAAAAB9lIwHY2hlY2tlZJSIcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": "true"
+                            },
+                            {
+                                "type": "exec",
+                                "label": "false"
+                            }
+                        ],
+                        "pos x": 1113.4607836459866,
+                        "pos y": 301.00527768586323,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.Print_Node",
+                        "state data": "gASVDgAAAAAAAAB9lIwGYWN0aXZllIhzLg==",
+                        "special actions": {
+                            "make passive": {
+                                "method": "make_passive"
+                            }
+                        },
+                        "display title": "Print",
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gASVHwAAAAAAAACMG1RpbWUgc2luY2UgbGFzdCBjYWxpYnJhdGlvbpQu",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFtlHUu",
+                                "has widget": true,
+                                "widget data": "gASVKQAAAAAAAAB9lIwEdGV4dJSMG1RpbWUgc2luY2UgbGFzdCBjYWxpYnJhdGlvbpRzLg=="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 1456.727547310667,
+                        "pos y": 194.92032308597447,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "built_in.GetVar_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "get Time",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gASVCAAAAAAAAACMBFRpbWWULg==",
+                                "dtype": "DType.String",
+                                "dtype state": "gASVLwAAAAAAAAB9lCiMB2RlZmF1bHSUjACUjANkb2OUaAKMBmJvdW5kc5ROjARzaXpllIwBbZR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBFRpbWWUcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "val"
+                            }
+                        ],
+                        "pos x": 936.6525259795053,
+                        "pos y": 583.036010646543,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.If_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "branch",
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": "cond",
+                                "dtype": "DType.Boolean",
+                                "dtype state": "gASVIwAAAAAAAAB9lCiMB2RlZmF1bHSUiYwDZG9jlIwAlIwGYm91bmRzlE51Lg==",
+                                "has widget": true,
+                                "widget data": "gASVDwAAAAAAAAB9lIwHY2hlY2tlZJSIcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": "true"
+                            },
+                            {
+                                "type": "exec",
+                                "label": "false"
+                            }
+                        ],
+                        "pos x": 1538.6630813512315,
+                        "pos y": 576.1361762010217,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "built_in.GetVar_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "get var",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gASVDgAAAAAAAACMCk5FWFRfU1RBR0WULg==",
+                                "dtype": "DType.String",
+                                "dtype state": "gASVLwAAAAAAAAB9lCiMB2RlZmF1bHSUjACUjANkb2OUaAKMBmJvdW5kc5ROjARzaXpllIwBbZR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVGAAAAAAAAAB9lIwEdGV4dJSMCk5FWFRfU1RBR0WUcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "val"
+                            }
+                        ],
+                        "pos x": 971.1516982071114,
+                        "pos y": 772.7814578983766,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.Less_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {
+                            "add input": {
+                                "method": "add_operand_input"
+                            },
+                            "remove input 0": {
+                                "method": "remove_operand_input",
+                                "data": 0
+                            },
+                            "remove input 1": {
+                                "method": "remove_operand_input",
+                                "data": 1
+                            }
+                        },
+                        "display title": "<",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBDEyMDCUcy4="
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVEwAAAAAAAAB9lIwEdGV4dJSMBTEyMDAwlHMu"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 1205.7460693548333,
+                        "pos y": 656.346751630206,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.If_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "branch",
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": "cond",
+                                "dtype": "DType.Boolean",
+                                "dtype state": "gASVIwAAAAAAAAB9lCiMB2RlZmF1bHSUiYwDZG9jlIwAlIwGYm91bmRzlE51Lg==",
+                                "has widget": true,
+                                "widget data": "gASVDwAAAAAAAAB9lIwHY2hlY2tlZJSJcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": "true"
+                            },
+                            {
+                                "type": "exec",
+                                "label": "false"
+                            }
+                        ],
+                        "pos x": 2523.8639570705186,
+                        "pos y": 484.9777799860999,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "built_in.GetVar_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "get var",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gASVDgAAAAAAAACMCm9sZF93ZWlnaHSULg==",
+                                "dtype": "DType.String",
+                                "dtype state": "gASVLwAAAAAAAAB9lCiMB2RlZmF1bHSUjACUjANkb2OUaAKMBmJvdW5kc5ROjARzaXpllIwBbZR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVGAAAAAAAAAB9lIwEdGV4dJSMCm9sZF93ZWlnaHSUcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "val"
+                            }
+                        ],
+                        "pos x": 1746.9097585213594,
+                        "pos y": 877.1664439034307,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "built_in.Val_Node",
+                        "state data": "gASVGwAAAAAAAAB9lIwDdmFslIwOU2lMQSBnZXRXZWlnaHSUcy4=",
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "display title": "val",
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 1707.3197356653513,
+                        "pos y": 721.2807289078984,
+                        "main widget data": "gASVHAAAAAAAAAB9lIwEdGV4dJSMDlNpTEEgZ2V0V2VpZ2h0lHMu",
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.Minus_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {
+                            "add input": {
+                                "method": "add_operand_input"
+                            },
+                            "remove input 0": {
+                                "method": "remove_operand_input",
+                                "data": 0
+                            },
+                            "remove input 1": {
+                                "method": "remove_operand_input",
+                                "data": 1
+                            }
+                        },
+                        "display title": "-",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVHAAAAAAAAAB9lIwEdGV4dJSMDlNpTEEgZ2V0V2VpZ2h0lHMu"
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBE5vbmWUcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 1960.9433195866534,
+                        "pos y": 691.5882117658923,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.Equal_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {
+                            "add input": {
+                                "method": "add_operand_input"
+                            },
+                            "remove input 0": {
+                                "method": "remove_operand_input",
+                                "data": 0
+                            },
+                            "remove input 1": {
+                                "method": "remove_operand_input",
+                                "data": 1
+                            }
+                        },
+                        "display title": "==",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBE5vbmWUcy4="
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gARLAC4=",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
+                                "has widget": true,
+                                "widget data": "gASVDwAAAAAAAAB9lIwEdGV4dJSMATCUcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 2212.0925270794546,
+                        "pos y": 648.2866242671332,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "MACRO_NODE_0",
+                        "state data": "gASVIAAAAAAAAAB9lIwFdGl0bGWUjBFDYWxjX05ld19WZWxvY2l0eZRzLg==",
+                        "special actions": {},
+                        "display title": "Calc_New_Velocity",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            },
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gAROLg==",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 2625.3133906390412,
+                        "pos y": 797.9863981914137,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "built_in.GetVar_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "get var",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gASVDAAAAAAAAACMCHZlbG9jaXR5lC4=",
+                                "dtype": "DType.String",
+                                "dtype state": "gASVLwAAAAAAAAB9lCiMB2RlZmF1bHSUjACUjANkb2OUaAKMBmJvdW5kc5ROjARzaXpllIwBbZR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVFgAAAAAAAAB9lIwEdGV4dJSMCHZlbG9jaXR5lHMu"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "val"
+                            }
+                        ],
+                        "pos x": 2782.4362938488225,
+                        "pos y": 298.1623596343113,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.ForLoop_Node",
+                        "state data": "gAR9lC4=",
+                        "special actions": {
+                            "add dimension": {
+                                "method": "add_dimension"
+                            }
+                        },
+                        "display title": "for",
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": "",
+                                "val": "gAROLg=="
+                            },
+                            {
+                                "type": "data",
+                                "label": "from",
+                                "val": "gAROLg==",
+                                "dtype": "DType.Integer",
+                                "dtype state": "gASVJAAAAAAAAAB9lCiMB2RlZmF1bHSUSwCMA2RvY5SMAJSMBmJvdW5kc5ROdS4=",
+                                "has widget": true,
+                                "widget data": "gASVDAAAAAAAAAB9lIwDdmFslEsAcy4="
+                            },
+                            {
+                                "type": "data",
+                                "label": "to",
+                                "val": "gAROLg==",
+                                "dtype": "DType.Integer",
+                                "dtype state": "gASVJAAAAAAAAAB9lCiMB2RlZmF1bHSUSwCMA2RvY5SMAJSMBmJvdW5kc5ROdS4=",
+                                "has widget": true,
+                                "widget data": "gASVDAAAAAAAAAB9lIwDdmFslEsAcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": "loop"
+                            },
+                            {
+                                "type": "data",
+                                "label": "i"
+                            },
+                            {
+                                "type": "exec",
+                                "label": "finished"
+                            }
+                        ],
+                        "pos x": 1920.371154338592,
+                        "pos y": 344.79391180170177,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "prototype.PumpNode",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "Pump",
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": "",
+                                "val": "gAROLg=="
+                            },
+                            {
+                                "type": "data",
+                                "label": "RPM",
+                                "val": "gAROLg==",
+                                "dtype": "DType.Integer",
+                                "dtype state": "gASVJAAAAAAAAAB9lCiMB2RlZmF1bHSUSwCMA2RvY5SMAJSMBmJvdW5kc5ROdS4=",
+                                "has widget": true,
+                                "widget data": "gASVDAAAAAAAAAB9lIwDdmFslEsAcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": "RPM"
+                            }
+                        ],
+                        "pos x": 1961.833713352721,
+                        "pos y": 170.21471595273886,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    }
+                ],
+                "connections": [
+                    {
+                        "parent node index": 0,
+                        "output port index": 0,
+                        "connected node": 1,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 1,
+                        "output port index": 0,
+                        "connected node": 3,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 2,
+                        "output port index": 0,
+                        "connected node": 1,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node index": 3,
+                        "output port index": 0,
+                        "connected node": 5,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node index": 4,
+                        "output port index": 0,
+                        "connected node": 3,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node index": 5,
+                        "output port index": 0,
+                        "connected node": 6,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 5,
+                        "output port index": 1,
+                        "connected node": 8,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 7,
+                        "output port index": 0,
+                        "connected node": 10,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 8,
+                        "output port index": 0,
+                        "connected node": 11,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 9,
+                        "output port index": 0,
+                        "connected node": 10,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node index": 10,
+                        "output port index": 0,
+                        "connected node": 8,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node index": 11,
+                        "output port index": 1,
+                        "connected node": 16,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node index": 12,
+                        "output port index": 0,
+                        "connected node": 14,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node index": 13,
+                        "output port index": 0,
+                        "connected node": 14,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 14,
+                        "output port index": 0,
+                        "connected node": 15,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 14,
+                        "output port index": 0,
+                        "connected node": 16,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 15,
+                        "output port index": 0,
+                        "connected node": 11,
+                        "connected input port index": 1
+                    }
+                ]
+            },
+            "flow view": {
+                "drawings": [],
+                "view size": [
+                    6400.0,
+                    4800.0
+                ]
+            }
+        }
+    ]
+}
