@@ -276,7 +276,7 @@
                                 "dtype": "DType.Data",
                                 "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
                                 "has widget": true,
-                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBE5vbmWUcy4="
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBDEyMDCUcy4="
                             },
                             {
                                 "type": "data",
@@ -349,7 +349,7 @@
                                 "dtype": "DType.Data",
                                 "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFzlHUu",
                                 "has widget": true,
-                                "widget data": "gASVEwAAAAAAAAB9lIwEdGV4dJSMBS0yNDAwlHMu"
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBE5vbmWUcy4="
                             },
                             {
                                 "type": "data",
@@ -922,8 +922,8 @@
                                 "label": "RPM"
                             }
                         ],
-                        "pos x": 1961.833713352721,
-                        "pos y": 170.21471595273886,
+                        "pos x": 1464.2996486700436,
+                        "pos y": 1157.3677585240248,
                         "unconnected ports hidden": false,
                         "collapsed": false
                     }
@@ -1029,6 +1029,94 @@
                         "parent node index": 15,
                         "output port index": 0,
                         "connected node": 11,
+                        "connected input port index": 1
+                    }
+                ]
+            },
+            "flow view": {
+                "drawings": [],
+                "view size": [
+                    6400.0,
+                    4800.0
+                ]
+            }
+        },
+        {
+            "name": "Basic_Pump_Calib",
+            "variables": {
+                "calibration_points": {
+                    "serialized": "gASVHQAAAAAAAABdlChLGUs8hpRLMks8hpRLS0s8hpRLZEs8hpRlLg=="
+                }
+            },
+            "flow": {
+                "algorithm mode": "data",
+                "nodes": [
+                    {
+                        "identifier": "built_in.Val_Node",
+                        "state data": "gASVJgAAAAAAAAB9lIwDdmFslF2UKEsZSzyGlEsySzyGlEtLSzyGlEtkSzyGlGVzLg==",
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "display title": "val",
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ],
+                        "pos x": 140.0,
+                        "pos y": 461.0,
+                        "main widget data": "gASVNwAAAAAAAAB9lIwEdGV4dJSMKVsoMjUsIDYwKSwgKDUwLCA2MCksICg3NSwgNjApLCAoMTAwLCA2MCldlHMu",
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "built_in.SetVarsPassive_Node",
+                        "state data": "gASVEQAAAAAAAAB9lIwIbnVtIHZhcnOUSwFzLg==",
+                        "special actions": {
+                            "add var input": {
+                                "method": "add_var_input"
+                            },
+                            "remove var 1": {
+                                "method": "remove_var_input",
+                                "data": 1
+                            }
+                        },
+                        "display title": "set vars passive",
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "var",
+                                "val": "gASVFgAAAAAAAACMEmNhbGlicmF0aW9uX3BvaW50c5Qu",
+                                "dtype": "DType.String",
+                                "dtype state": "gASVLwAAAAAAAAB9lCiMB2RlZmF1bHSUjACUjANkb2OUaAKMBmJvdW5kc5ROjARzaXpllIwBbJR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVIAAAAAAAAAB9lIwEdGV4dJSMEmNhbGlicmF0aW9uX3BvaW50c5RzLg=="
+                            },
+                            {
+                                "type": "data",
+                                "label": "val",
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVLgAAAAAAAAB9lCiMB2RlZmF1bHSUTowDZG9jlIwAlIwGYm91bmRzlE6MBHNpemWUjAFslHUu",
+                                "has widget": true,
+                                "widget data": "gASVNwAAAAAAAAB9lIwEdGV4dJSMKVsoMjUsIDYwKSwgKDUwLCA2MCksICg3NSwgNjApLCAoMTAwLCA2MCldlHMu"
+                            }
+                        ],
+                        "outputs": [],
+                        "pos x": 480.0,
+                        "pos y": 469.0,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    }
+                ],
+                "connections": [
+                    {
+                        "parent node index": 0,
+                        "output port index": 0,
+                        "connected node": 1,
                         "connected input port index": 1
                     }
                 ]
