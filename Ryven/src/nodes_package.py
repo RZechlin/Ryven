@@ -1,4 +1,4 @@
-from os.path import basename, dirname, splitext, normpath, join
+from os.path import basename, dirname, splitext, normpath, join, abspath, splitdrive
 
 
 class NodesPackage:
@@ -18,3 +18,7 @@ class NodesPackage:
             'name': self.name,
             'dir': self.directory,
         }
+
+    def add_path(self):
+        self.directory = join(splitdrive(__file__)[0], splitdrive(self.directory)[1])
+        self.file_path = normpath((join(self.directory, 'nodes.py')))

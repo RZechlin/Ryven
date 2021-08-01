@@ -300,6 +300,7 @@ import: ctrl+i
 
     def import_packages(self, packages_list: [NodesPackage]):
         for p in packages_list:
+            p.add_path()
             self.import_nodes(p)
 
     def import_nodes(self, package: NodesPackage = None, path: str = None):

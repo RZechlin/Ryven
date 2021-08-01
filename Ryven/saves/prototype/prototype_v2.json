@@ -5,11 +5,11 @@
     "required packages": [
         {
             "name": "std",
-            "dir": "E:/Code/SiLA/Ryven/Ryven/packages/std"
+            "dir": "D:/Code/SiLA/Ryven/Ryven/packages/std"
         },
         {
             "name": "prototype",
-            "dir": "E:/Code/SiLA/Ryven/Ryven/packages/prototype"
+            "dir": "D:/Code/SiLA/Ryven/Ryven/packages/prototype"
         }
     ],
     "macro scripts": [
@@ -1108,6 +1108,33 @@
                         "outputs": [],
                         "pos x": 480.0,
                         "pos y": 469.0,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "prototype.DeviceServicer_LockControlPanel",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "Lock Control Panel",
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": "",
+                                "val": "gAROLg=="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": "Response"
+                            }
+                        ],
+                        "pos x": 328.0,
+                        "pos y": 141.0,
                         "unconnected ports hidden": false,
                         "collapsed": false
                     }

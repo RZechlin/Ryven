@@ -198,9 +198,8 @@ class DeviceServicer_GetTotalVolume(RegloDCNodeBase):
         if inp == 0:
             self.exec_output(0)
 
-
-class DeviceServicer_LockControlPanel(RegloDCNodeBase):
-    """Set control panel to inactive (Input via control keys is not possible)."""
+class DeviceServicer_UnlockControlPanel(RegloDCNodeBase):
+    """Switch control panel to manual operation."""
 
     title = 'Lock Control Panel'
     init_inputs = [
@@ -218,6 +217,28 @@ class DeviceServicer_LockControlPanel(RegloDCNodeBase):
     def update_event(self, inp=-1):
         if inp == 0:
             self.exec_output(0)
+
+
+class DeviceServicer_LockControlPanel(RegloDCNodeBase):
+    """Set control panel to inactive (Input via control keys is not possible)."""
+
+    title = 'Lock Control Panel'
+    init_inputs = [
+        NodeInputBP(type_='exec'),
+    ]
+    init_outputs = [
+        NodeOutputBP('', type_='exec'),
+        NodeOutputBP('Response', type_='data'),
+    ]
+
+    def __init__(self, params):
+        super().__init__(params)
+
+    def update_event(self, inp=-1):
+        if inp == 0:
+            response = "The control panel has been locked"
+            self.exec_output(0)
+            self.set_output_val(1, response)
 
 
 class DeviceServicer_SetDisplayNumbers(RegloDCNodeBase):

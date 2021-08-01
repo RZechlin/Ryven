@@ -142,7 +142,8 @@ class StartupDialog(QDialog):
         missing_node_package_names = []
         for p in project_dict['required packages']:
             try:
-                f = open(p['dir']+'/nodes.py')
+                drive = os.path.splitdrive(__file__)[0]
+                f = open(drive + '/' + os.path.splitdrive(p['dir'])[1]+'/nodes.py')
                 f.close()
                 valid_node_packages.append(NodesPackage(p['dir']))
             except FileNotFoundError:
