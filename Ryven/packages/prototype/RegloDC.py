@@ -201,14 +201,14 @@ class DeviceServicer_GetTotalVolume(RegloDC_NodeBase):
 class DeviceServicer_UnlockControlPanel(RegloDC_NodeBase):
     """Switch control panel to manual operation."""
 
-    title = 'Lock Control Panel'
+    title = 'Unlock Control Panel'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
     ]
     init_outputs = [
         NodeOutputBP('', type_='exec'),
-        NodeOutputBP('', type_='data'),
+        NodeOutputBP('Response', type_='data'),
     ]
 
     def __init__(self, params):
@@ -216,7 +216,9 @@ class DeviceServicer_UnlockControlPanel(RegloDC_NodeBase):
 
     def update_event(self, inp=-1):
         if inp == 0:
+            response = "Control panel switched to manual operation."
             self.exec_output(0)
+            self.set_output_val(1, response)
 
 
 class DeviceServicer_LockControlPanel(RegloDC_NodeBase):
@@ -380,6 +382,7 @@ deviceServicer_nodes = [
     DeviceServicer_ResetToDefault,
     DeviceServicer_GetTotalVolume,
     DeviceServicer_LockControlPanel,
+    DeviceServicer_UnlockControlPanel,
     DeviceServicer_SetDisplayNumbers,
     DeviceServicer_SetDisplayLetters,
     DeviceServicer_SetCommunicationPort,
@@ -411,11 +414,85 @@ class DriveControlServicer_SetDirectionClockwise(RegloDC_NodeBase):
             self.set_output_val(1, response)
 
 
+class DriveControlServicer_StartPump(RegloDC_NodeBase):
+    """Starts the pump out of stand-by mode."""
+
+    title = 'Start Pump'
+    init_inputs = [
+        NodeInputBP(type_='exec'),
+    ]
+    init_outputs = [
+        NodeOutputBP('', type_='exec'),
+        NodeOutputBP('Start Status', type_='data'),
+    ]
+
+    def __init__(self, params):
+        super().__init__(params)
+
+    def update_event(self, inp=-1):
+        if inp == 0:
+            response = "Start of pump succeeded."
+            self.exec_output(0)
+            self.set_output_val(1, response)
+
+
+class DriveControlServicer_StopPump(RegloDC_NodeBase):
+    """Stops all channels of the pump."""
+
+    title = 'Stop Pump'
+    init_inputs = [
+        NodeInputBP(type_='exec'),
+    ]
+    init_outputs = [
+        NodeOutputBP('', type_='exec'),
+        NodeOutputBP('Stop Status', type_='data'),
+    ]
+
+    def __init__(self, params):
+        super().__init__(params)
+
+    def update_event(self, inp=-1):
+        if inp == 0:
+            response = "Shut-down of pump succeeded."
+            self.exec_output(0)
+            self.set_output_val(1, response)
+
+
+
 driveControlServicer_nodes = [
     DriveControlServicer_SetDirectionClockwise,
+    DriveControlServicer_StartPump,
+    DriveControlServicer_StopPump,
+]
+
+class ParameterControlServicer_SetRPM(RegloDC_NodeBase):
+    """Set pump speed in rpm (100 - 10000 (4 channel type); 160 - 16000 (2 channel type))."""
+
+    title = 'Set RPM'
+    init_inputs = [
+        NodeInputBP(type_='exec'),
+        NodeInputBP(dtype=dtypes.Integer(), label='RPM'),
+    ]
+    init_outputs = [
+        NodeOutputBP('', type_='exec'),
+        NodeOutputBP('', type_='data'),
+    ]
+
+    def __init__(self, params):
+        super().__init__(params)
+
+    def update_event(self, inp=-1):
+        if inp == 0:
+            response = "RPM successfully set"
+            self.exec_output(0)
+            self.set_output_val(1, response)
+
+parameterControlServicer_nodes = [
+    ParameterControlServicer_SetRPM,
 ]
 
 nodes = [
     *deviceServicer_nodes,
     *driveControlServicer_nodes,
+    *parameterControlServicer_nodes,
 ]
