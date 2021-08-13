@@ -4,12 +4,12 @@
     },
     "required packages": [
         {
-            "name": "prototype",
-            "dir": "D:/Code/SiLA/Ryven/Ryven/packages/prototype"
+            "name": "std",
+            "dir": "E:/Code/SiLA/Ryven/Ryven/packages/std"
         },
         {
-            "name": "std",
-            "dir": "D:/Code/SiLA/Ryven/Ryven/packages/std"
+            "name": "prototype",
+            "dir": "E:/Code/SiLA/Ryven/Ryven/packages/prototype"
         }
     ],
     "macro scripts": [
@@ -897,24 +897,52 @@
                         "inputs": [
                             {
                                 "type": "exec",
-                                "label": "",
-                                "val": "gAROLg=="
+                                "label": ""
                             },
                             {
                                 "type": "data",
                                 "label": "",
-                                "val": "gAROLg==",
                                 "has widget": false
                             }
                         ],
                         "outputs": [],
-                        "pos x": 610.0,
-                        "pos y": 274.0,
+                        "pos x": 769.0,
+                        "pos y": 283.0,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "prototype.BalanceService_Properties",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "Properties",
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "Stable Weight Value"
+                            }
+                        ],
+                        "pos x": 430.0,
+                        "pos y": 440.0,
                         "unconnected ports hidden": false,
                         "collapsed": false
                     }
                 ],
-                "connections": []
+                "connections": [
+                    {
+                        "parent node index": 0,
+                        "output port index": 0,
+                        "connected node": 1,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 2,
+                        "output port index": 0,
+                        "connected node": 1,
+                        "connected input port index": 1
+                    }
+                ]
             },
             "parameters": [
                 {
@@ -1093,8 +1121,8 @@
                                 "label": ""
                             }
                         ],
-                        "pos x": 2026.0,
-                        "pos y": 703.0,
+                        "pos x": 1965.429284713056,
+                        "pos y": 634.2440529175235,
                         "unconnected ports hidden": false,
                         "collapsed": false
                     },
@@ -1221,8 +1249,8 @@
                                 "label": ""
                             }
                         ],
-                        "pos x": 2520.0,
-                        "pos y": 929.0,
+                        "pos x": 2343.1989932164884,
+                        "pos y": 807.858569426113,
                         "unconnected ports hidden": false,
                         "collapsed": false
                     },
@@ -1276,8 +1304,8 @@
                                 "label": ""
                             }
                         ],
-                        "pos x": 2365.0,
-                        "pos y": 774.0,
+                        "pos x": 2188.1989932164884,
+                        "pos y": 652.858569426113,
                         "main widget data": "gASVEAAAAAAAAAB9lIwEdGV4dJSMAjUwlHMu",
                         "unconnected ports hidden": false,
                         "collapsed": false
@@ -1298,8 +1326,8 @@
                                 "label": ""
                             }
                         ],
-                        "pos x": 2755.5,
-                        "pos y": 783.5,
+                        "pos x": 2578.6989932164884,
+                        "pos y": 662.358569426113,
                         "main widget data": "gASVEAAAAAAAAAB9lIwEdGV4dJSMAjc1lHMu",
                         "unconnected ports hidden": false,
                         "collapsed": false
@@ -1331,8 +1359,8 @@
                                 "label": ""
                             }
                         ],
-                        "pos x": 2910.5,
-                        "pos y": 938.5,
+                        "pos x": 2733.6989932164884,
+                        "pos y": 817.358569426113,
                         "unconnected ports hidden": false,
                         "collapsed": false
                     },
@@ -1352,8 +1380,8 @@
                                 "label": ""
                             }
                         ],
-                        "pos x": 3131.5,
-                        "pos y": 816.5,
+                        "pos x": 2954.6989932164884,
+                        "pos y": 695.358569426113,
                         "main widget data": "gASVEQAAAAAAAAB9lIwEdGV4dJSMAzEwMJRzLg==",
                         "unconnected ports hidden": false,
                         "collapsed": false
@@ -1385,8 +1413,8 @@
                                 "label": ""
                             }
                         ],
-                        "pos x": 3286.5,
-                        "pos y": 971.5,
+                        "pos x": 3109.6989932164884,
+                        "pos y": 850.3585694261133,
                         "unconnected ports hidden": false,
                         "collapsed": false
                     },
@@ -1421,8 +1449,43 @@
                                 "label": ""
                             }
                         ],
-                        "pos x": 2563.0,
-                        "pos y": 1049.0,
+                        "pos x": 2386.1989932164884,
+                        "pos y": 927.8585694261133,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "prototype.DeviceServicer_UnlockControlPanel",
+                        "state data": "gAR9lC4=",
+                        "special actions": {},
+                        "display title": "Unlock Control Panel",
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "val": "gAROLg==",
+                                "dtype": "DType.Integer",
+                                "dtype state": "gASVJAAAAAAAAAB9lCiMB2RlZmF1bHSUSwCMA2RvY5SMAJSMBmJvdW5kc5ROdS4=",
+                                "has widget": true,
+                                "widget data": "gASVDAAAAAAAAAB9lIwDdmFslEsAcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": ""
+                            },
+                            {
+                                "type": "data",
+                                "label": "Response"
+                            }
+                        ],
+                        "pos x": 3468.901234946846,
+                        "pos y": 888.9161729948738,
                         "unconnected ports hidden": false,
                         "collapsed": false
                     }
@@ -1528,6 +1591,12 @@
                         "parent node index": 14,
                         "output port index": 0,
                         "connected node": 15,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node index": 15,
+                        "output port index": 0,
+                        "connected node": 17,
                         "connected input port index": 0
                     },
                     {

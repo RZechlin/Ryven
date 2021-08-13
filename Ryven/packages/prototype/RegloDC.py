@@ -204,7 +204,6 @@ class DeviceServicer_UnlockControlPanel(RegloDC_NodeBase):
     title = 'Unlock Control Panel'
     init_inputs = [
         NodeInputBP(type_='exec'),
-        NodeInputBP(dtype=dtypes.Integer(), label=''),
     ]
     init_outputs = [
         NodeOutputBP('', type_='exec'),
