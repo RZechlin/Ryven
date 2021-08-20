@@ -7,8 +7,8 @@ class RegloDC_NodeBase(Node):
 
 
 class DeviceServicer_GetLog(RegloDC_NodeBase):
-    title = 'RegloDC - Device Servicer'
-
+    """"""
+    title = 'SiLA//RegloDC - Get Log'
     init_inputs = [
         NodeInputBP(type_='exec', label='GetLog'),
         #NodeInputBP(dtype=dtypes.Integer(), label='RPM'),
@@ -33,7 +33,7 @@ class DeviceServicer_GetLog(RegloDC_NodeBase):
 class DeviceServicer_SetPumpAddress(RegloDC_NodeBase):
     """Set the address of the pump (1-8)."""
 
-    title = 'Set Pump Address'
+    title = 'SiLA//RegloDC - Set Pump Address'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -54,7 +54,7 @@ class DeviceServicer_SetPumpAddress(RegloDC_NodeBase):
 class DeviceServicer_GetPumpSatus(RegloDC_NodeBase):
     """Get pump status. +=running, -=stopped/standby."""
 
-    title = 'Get Pump Status'
+    title = 'SiLA//RegloDC - Get Pump Status'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -76,7 +76,7 @@ class DeviceServicer_GetVersionType(RegloDC_NodeBase):
     """Get pump information. Response is string of model description (variable length), software version (3 digits) 
     and pump head model type code (3 digits)."""
 
-    title = 'Get Version Type'
+    title = 'SiLA//RegloDC - Get Version Type'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -97,7 +97,7 @@ class DeviceServicer_GetVersionType(RegloDC_NodeBase):
 class DeviceServicer_GetVersionSoftware(RegloDC_NodeBase):
     """Get pump software version. Response is string."""
 
-    title = 'Current Version Software'
+    title = 'SiLA//RegloDC - Current Version Software'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -118,7 +118,7 @@ class DeviceServicer_GetVersionSoftware(RegloDC_NodeBase):
 class DeviceServicer_GetPumpID(RegloDC_NodeBase):
     """Get pump head identification number."""
 
-    title = 'Get Pump ID'
+    title = 'SiLA//RegloDC - Get Pump ID'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -139,7 +139,7 @@ class DeviceServicer_GetPumpID(RegloDC_NodeBase):
 class DeviceServicer_SetPumpID(RegloDC_NodeBase):
     """Set pump head identification number"""
 
-    title = 'Set Pump ID'
+    title = 'SiLA//RegloDC - Set Pump ID'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -160,7 +160,7 @@ class DeviceServicer_SetPumpID(RegloDC_NodeBase):
 class DeviceServicer_ResetToDefault(RegloDC_NodeBase):
     """Resets all user configurable data to default values."""
 
-    title = 'Reset To Default'
+    title = 'SiLA//RegloDC - Reset To Default'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -181,7 +181,7 @@ class DeviceServicer_ResetToDefault(RegloDC_NodeBase):
 class DeviceServicer_GetTotalVolume(RegloDC_NodeBase):
     """Get total volume pumped since last reset, in muL, mL, or L."""
 
-    title = 'Get Total Volume'
+    title = 'SiLA//RegloDC - Get Total Volume'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -201,7 +201,7 @@ class DeviceServicer_GetTotalVolume(RegloDC_NodeBase):
 class DeviceServicer_UnlockControlPanel(RegloDC_NodeBase):
     """Switch control panel to manual operation."""
 
-    title = 'Unlock Control Panel'
+    title = 'SiLA//RegloDC - Unlock Control Panel'
     init_inputs = [
         NodeInputBP(type_='exec'),
     ]
@@ -223,7 +223,7 @@ class DeviceServicer_UnlockControlPanel(RegloDC_NodeBase):
 class DeviceServicer_LockControlPanel(RegloDC_NodeBase):
     """Set control panel to inactive (Input via control keys is not possible)."""
 
-    title = 'Lock Control Panel'
+    title = 'SiLA//RegloDC - Lock Control Panel'
     init_inputs = [
         NodeInputBP(type_='exec'),
     ]
@@ -246,7 +246,7 @@ class DeviceServicer_SetDisplayNumbers(RegloDC_NodeBase):
     """Write numbers to the pump to display while under external control 
     - float of length 5 including +/- and decimal points."""
 
-    title = 'Set Display Numbers'
+    title = 'SiLA//RegloDC - Set Display Numbers'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -268,7 +268,7 @@ class DeviceServicer_SetDisplayLetters(RegloDC_NodeBase):
     """Write letters to the pump to display while under external control - 
     string of length 4."""
 
-    title = 'Set Display Letters'
+    title = 'SiLA//RegloDC - Set Display Letters'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -289,7 +289,7 @@ class DeviceServicer_SetDisplayLetters(RegloDC_NodeBase):
 class DeviceServicer_SetCommunicationPort(RegloDC_NodeBase):
     """Set pump head identification number."""
 
-    title = 'Set Pump ID'
+    title = 'SiLA//RegloDC - Set Pump ID'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -310,7 +310,7 @@ class DeviceServicer_SetCommunicationPort(RegloDC_NodeBase):
 class DeviceServicer_ConnectDevice(RegloDC_NodeBase):
     """Sets up a serial connection with the device using the specified connection details."""
 
-    title = 'Connect Device'
+    title = 'SiLA//RegloDC - Connect Device'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -331,7 +331,7 @@ class DeviceServicer_ConnectDevice(RegloDC_NodeBase):
 class DeviceServicer_ResetOverload(RegloDC_NodeBase):
     """Reset the device command input buffer overload."""
 
-    title = 'Reset Overload'
+    title = 'SiLA//RegloDC - Reset Overload'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -352,7 +352,7 @@ class DeviceServicer_ResetOverload(RegloDC_NodeBase):
 class DeviceServicer_Properties(RegloDC_NodeBase):
     """All properties"""
 
-    title = 'Properties'
+    title = 'SiLA//RegloDC - Properties'
     init_inputs = [
         #NodeInputBP(type_='exec'),
         #NodeInputBP(dtype=dtypes.Integer(), label=''),
@@ -394,7 +394,7 @@ deviceServicer_nodes = [
 class DriveControlServicer_SetDirectionClockwise(RegloDC_NodeBase):
     """Set the rotation direction of the pump to clockwise"""
 
-    title = 'Set Direction to clockwise'
+    title = 'SiLA//RegloDC - Set Direction to clockwise'
     init_inputs = [
         NodeInputBP(type_='exec'),
     ]
@@ -416,7 +416,7 @@ class DriveControlServicer_SetDirectionClockwise(RegloDC_NodeBase):
 class DriveControlServicer_StartPump(RegloDC_NodeBase):
     """Starts the pump out of stand-by mode."""
 
-    title = 'Start Pump'
+    title = 'SiLA//RegloDC - Start Pump'
     init_inputs = [
         NodeInputBP(type_='exec'),
     ]
@@ -438,7 +438,7 @@ class DriveControlServicer_StartPump(RegloDC_NodeBase):
 class DriveControlServicer_StopPump(RegloDC_NodeBase):
     """Stops all channels of the pump."""
 
-    title = 'Stop Pump'
+    title = 'SiLA//RegloDC - Stop Pump'
     init_inputs = [
         NodeInputBP(type_='exec'),
     ]
@@ -467,7 +467,7 @@ driveControlServicer_nodes = [
 class ParameterControlServicer_SetRPM(RegloDC_NodeBase):
     """Set pump speed in rpm (100 - 10000 (4 channel type); 160 - 16000 (2 channel type))."""
 
-    title = 'Set RPM'
+    title = 'SiLA//RegloDC - Set RPM'
     init_inputs = [
         NodeInputBP(type_='exec'),
         NodeInputBP(dtype=dtypes.Integer(), label='RPM'),

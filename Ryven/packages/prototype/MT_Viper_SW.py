@@ -9,7 +9,7 @@ class MT_Viper_SW_NodeBase(Node):
 class BalanceService_Properties(MT_Viper_SW_NodeBase):
     """All properties"""
 
-    title = 'Properties'
+    title = 'SiLA//MT_Viper - Properties'
     init_inputs = [
         #NodeInputBP(type_='exec'),
         #NodeInputBP(dtype=dtypes.Integer(), label=''),
