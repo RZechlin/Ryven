@@ -42,7 +42,7 @@ class MainWindow(QMainWindow):
         if self.theme.name == 'dark':
             self.session.design.set_flow_theme(name='pure dark')
         else:  # 'light'
-            self.session.design.set_flow_theme(name='pure light')
+            self.session.design.set_flow_theme(name='colorful light')
 
         # UI
         self.setup_ui()
